@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAen//9mY\u003d",
+        "filename": "mac80211/compat_wl12xx/drivers/net/wireless/wl12xx/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2013-04-07T17:51:41Z",
+      "side": 1,
+      "message": "I\u0027m not certain this needs to be changed",
+      "revId": "20d959bb09c18108860b0988f34a94fc660fa797",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}

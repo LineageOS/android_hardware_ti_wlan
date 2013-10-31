@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_98f8a47e",
+        "filename": "mac80211/wl128x-wlan-products.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5678
+      },
+      "writtenOn": "2013-10-31T22:02:02Z",
+      "side": 1,
+      "message": "No wl1271-nvs.bin here? The stock HTC firmware for endeavoru ships the file and it is also usable in case the calibration fails. It\u0027s 1113 bytes.",
+      "revId": "7781512633c23d4eacbfa412a3a2d19f761904e6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}

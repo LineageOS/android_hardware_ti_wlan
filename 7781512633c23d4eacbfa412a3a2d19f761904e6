@@ -16,6 +16,24 @@
       "revId": "7781512633c23d4eacbfa412a3a2d19f761904e6",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_333c1393",
+        "filename": "mac80211/wl128x-wlan-products.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2013-11-01T10:45:46Z",
+      "side": 1,
+      "message": "I can add it but I don\u0027t have any wl128x device to test it.",
+      "parentUuid": "1a4dcd0f_98f8a47e",
+      "revId": "7781512633c23d4eacbfa412a3a2d19f761904e6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }

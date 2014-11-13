@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_7f2cbaab",
+        "filename": "mac80211/ti-utils/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5678
+      },
+      "writtenOn": "2014-11-13T10:46:37Z",
+      "side": 1,
+      "message": "external/libnl/include",
+      "revId": "4d0198e790dc02847c833e5be6c76e7289a92595",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_9f2f16a1",
+        "filename": "mac80211/wpa_supplicant_lib/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 5678
+      },
+      "writtenOn": "2014-11-13T10:46:37Z",
+      "side": 1,
+      "message": "external/libnl/include",
+      "revId": "4d0198e790dc02847c833e5be6c76e7289a92595",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}

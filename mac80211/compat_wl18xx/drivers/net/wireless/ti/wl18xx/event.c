@@ -265,6 +265,9 @@ int wl18xx_process_mailbox_events(struct wl1271 *wl)
 				wl->links[link_id].addr),
 			win_size);
 	}
+	if (vector & FW_LOGGER_INDICATION)
+		wlcore_event_fw_logger(wl);
+
 
 out_event:
 

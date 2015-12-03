@@ -6534,7 +6534,6 @@ static void wlcore_nvs_cb(const struct firmware *fw, void *context)
 	wl->initialized = true;
 
 	wl1271_info("driver version: %s", wlcore_git_head);
-	wl1271_info("compilation time: %s", wlcore_timestamp);
 	goto out;
 
 out_unreg:

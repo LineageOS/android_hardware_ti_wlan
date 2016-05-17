@@ -34,6 +34,7 @@ endef
 
 endif
 
+.PHONY: $(obj)/version.h
 $(obj)/version.h: $(WLCORE_VERSION_DEPS)
 	@$(call filechk,version.h)
 

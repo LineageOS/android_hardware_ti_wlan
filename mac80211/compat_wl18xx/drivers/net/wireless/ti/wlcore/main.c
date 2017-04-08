@@ -1620,8 +1620,9 @@ static int wl1271_configure_wowlan(struct wl1271 *wl,
 				   struct cfg80211_wowlan *wow)
 {
 	int i, ret;
+	int n_patterns = wow->n_patterns + wow->magic_pkt;
 
-	if (!wow || wow->any || !wow->n_patterns) {
+	if (!wow || wow->any || !n_patterns) {
 		ret = wl1271_acx_default_rx_filter_enable(wl, 0,
 							  FILTER_SIGNAL);
 		if (ret)
@@ -1634,7 +1635,7 @@ static int wl1271_configure_wowlan(struct wl1271 *wl,
 		return 0;
 	}
 
-	if (WARN_ON(wow->n_patterns > WL1271_MAX_RX_FILTERS))
+	if (WARN_ON(n_patterns > WL1271_MAX_RX_FILTERS))
 		return -EINVAL;
 
 	/* Validate all incoming patterns before clearing current FW state */
@@ -1669,6 +1670,28 @@ static int wl1271_configure_wowlan(struct wl1271 *wl,
 		}
 
 		ret = wl1271_rx_filter_enable(wl, i, 1, filter);
+
+		wl1271_rx_filter_free(filter);
+		if (ret)
+			goto out;
+	}
+
+	if (wow->magic_pkt) {
+		struct wl12xx_rx_filter *filter = wl1271_rx_filter_alloc();
+
+		if (!filter) {
+			wl1271_warning("Failed to alloc magic_pkt rx filter");
+			ret = -ENOMEM;
+			goto out;
+		}
+
+		ret = wl1271_rx_filter_alloc_field(filter, 0,
+			WL1271_RX_FILTER_FLAG_ETHERNET_HEADER,
+			wl->addresses[0].addr, ETH_ALEN);
+
+		filter->action = FILTER_SIGNAL;
+
+		ret = wl1271_rx_filter_enable(wl, wow->n_patterns, 1, filter);
 
 		wl1271_rx_filter_free(filter);
 		if (ret)
@@ -6501,7 +6524,7 @@ EXPORT_SYMBOL_GPL(wlcore_free_hw);
 
 #ifdef CONFIG_PM
 static const struct wiphy_wowlan_support wlcore_wowlan_support = {
-	.flags = WIPHY_WOWLAN_ANY,
+	.flags = WIPHY_WOWLAN_ANY | WIPHY_WOWLAN_MAGIC_PKT,
 	.n_patterns = WL1271_MAX_RX_FILTERS,
 	.pattern_min_len = 1,
 	.pattern_max_len = WL1271_RX_FILTER_MAX_PATTERN_SIZE,

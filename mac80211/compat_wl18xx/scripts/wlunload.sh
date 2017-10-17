@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # The old stack drivers and the mac80211 rc80211_simple modules
 # which is no longer on recent kernels (its internal)
@@ -35,8 +35,8 @@ MODULES="$MODULES mac80211 cfg80211 lib80211"
 MADWIFI_MODULES="ath_pci ath_rate_sample wlan_scan_sta wlan ath_hal"
 IPW3945D="/sbin/ipw3945d-`uname -r`"
 
-if [ -f $IPW3945D ]; then
-	$IPW3945D --isrunning
+if [ -f "$IPW3945D" ]; then
+	"$IPW3945D" --isrunning
 	if [ ! $? ]; then
 		echo -n "Detected ipw3945 daemon loaded we're going to "
 		echo "shut the daemon down now and remove the module."

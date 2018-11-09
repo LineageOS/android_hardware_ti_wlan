@@ -36,6 +36,7 @@ LOCAL_C_INCLUDES += external/libnl-headers
 LOCAL_STATIC_LIBRARIES := libnl_2
 endif
 LOCAL_MODULE_TAGS := optional
+LOCAL_VENDOR_MODULE := true
 LOCAL_MODULE := calibrator
 
 include $(BUILD_EXECUTABLE)
